@@ -40,9 +40,9 @@ function handleMouseClick(evt) {
 function openLocation(link) {
     if (!!link) {
         document.removeEventListener('touchmove', handleTouchMove, false);
-        
-        window.open(link, '_self', "", false);
+
         window.navigator.vibrate(200);
+        window.open(link, '_self', "", false);
     }
 }
 
