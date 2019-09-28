@@ -20,6 +20,20 @@ function handleTouchStart(evt) {
     removeClassFromBar();
 };
 
+function swipeEffect(diff, color) {
+    overlay.style.backgroundColor = color;
+
+    var progress = (Math.abs(diff) / (document.body.clientWidth / 2)) * 100;
+
+    if (progress < 100) {
+        overlay.style.opacity = progress / 100;
+        percentage.style.width = progress + "%";
+    } else {
+        overlay.style.opacity = 1;
+        percentage.style.width = 100 + '%';
+    }
+}
+
 function handleTouchMove(evt) {
     if ( ! xDown || ! yDown ) {
         return;
@@ -32,28 +46,15 @@ function handleTouchMove(evt) {
 
     if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
         if ( xDiff > 0 ) {
-            overlay.style.backgroundColor = '#e91e63';
-
-            var progress = (xDiff / (document.body.clientWidth / 2)) * 100;
-
-            if (progress < 100) {
-                overlay.style.opacity = progress / 100;
-                percentage.style.width = progress + "%";
-            } else {
-                overlay.style.opacity = 1;
-                percentage.style.width = 100 + '%';
-            }
-            console.log("Left");
+            swipeEffect(xDiff, '#e91e63');
         } else {
-            var diff = xDiff * -1;
-
-            console.log("Right");
+            swipeEffect(xDiff, '#ea0000');
         }
     } else {
         if ( yDiff > 0 ) {
-            console.log("Up");
+            swipeEffect(yDiff, '#0012ea');
         } else { 
-            console.log("Down");
+            swipeEffect(yDiff, '#04ea00');
         }
     }
 };
