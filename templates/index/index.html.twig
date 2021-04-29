@@ -1,0 +1,37 @@
+{% block index_wrapper %}
+    <!DOCTYPE html>
+    <html lang="en">
+
+    {% block index_header %}
+        {% include "index/header.html.twig" %}
+    {% endblock %}
+
+    {% block index_body %}
+        <body>
+
+            {% block index_body_pagewrap %}
+                <div class="page-wrap">
+                    <div class="page--head">
+                        <h1 class="page--title">
+
+                            {% block index_body_page_headline %}
+                                <span>mindu.</span><span>cloud</span></h1>
+                            {% endblock %}
+
+                            {% block index_body_page_subline %}
+                                <p>This is my little website. Don't break it – <span class="thicc">Just look.</span></p>
+                            {% endblock %}
+                    </div>
+                </div>
+            {% endblock %}
+
+            {% block index_body_scripts %}
+                <div id="circle"></div>
+                <script src="../templates/src/js/darkmode.js"></script>
+            {% endblock %}
+
+        </body>
+    {% endblock %}
+    
+    </html>
+{% endblock %}

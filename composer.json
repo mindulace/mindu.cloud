@@ -1,0 +1,12 @@
+{
+    "require": {
+        "slim/slim": "3.12.3",
+        "tuupola/slim-basic-auth": "^3.2",
+        "slim/twig-view": "2.5.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Engine\\": "src/Engine"
+        }
+    }
+}
