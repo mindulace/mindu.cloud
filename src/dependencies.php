@@ -5,7 +5,7 @@ $container = $app->getContainer();
 // View renderer
 $container['view'] = function ($c) {
     $view = new Slim\Views\Twig('../templates', [
-        'cache' => true
+        'cache' => false
     ]);
 
     // Instantiate and add Slim specific extension

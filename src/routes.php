@@ -1,8 +1,12 @@
 <?php
 
 use Engine\Controllers\Index;
+use Engine\Controllers\NotFound;
 
+/** @var Slim\App $app */
 $app->get('/', Index::class . ':index')->setName('index.index');
+
+$container['notFoundHandler'] = [(new NotFound($container)), 'index'];
 
 // $app->get('/register', Register::class . ':index')->setName('register.index');
 

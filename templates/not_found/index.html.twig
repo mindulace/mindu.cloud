@@ -1,0 +1,11 @@
+{% extends "index/index.html.twig" %}
+
+{% block header_title %}{{ parent() }} - Not found{% endblock %}
+
+{% block index_body_page_headline %}
+    <span>Not.</span><span>Found</span>
+{% endblock %}
+
+{% block index_body_page_subline %}
+    <p>Sorry, I couldn't find it – <a href="{{ path_for('index.index') }}" class="thicc">Just return home.</a></p>
+{% endblock %}
